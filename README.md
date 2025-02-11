@@ -6,3 +6,5 @@ Now many people are getting error in different stages I will explain how i did t
 5. After creating api gateway do add endpoint in js file and do click on deploy.
 6. After uploading my files in s3 bucket and attaching policy i was able to open my website but i was not able perform any action as i was getting popup about error. After checking in inspect > console i got cors related error. You have to attach cors policy for you s3 bucket
 policy : 
+7.  we are accessing the website from S3 so it is not secure so fr to get more secure to our website here i deployed an Website infront of S3
+8.  so now our student data website is  Secure.
