@@ -1,10 +1,24 @@
-Now many people are getting error in different stages I will explain how i did troubleshooting:
-1. Everyone while you are creating dynamodb table and partition key please keep name as shown in video otherwise you will have to make changes in scripts applicable only if you are using code from this video.
-2. I have created role for lambda function and given them full access to dynamodb and api gateway
-3. In get function script do change the region 
-4. While testing event in lambda for insert function please check format of your json otherwise you will get errors
-5. After creating api gateway do add endpoint in js file and do click on deploy.
-6. After uploading my files in s3 bucket and attaching policy i was able to open my website but i was not able perform any action as i was getting popup about error. After checking in inspect > console i got cors related error. You have to attach cors policy for you s3 bucket
-policy : 
-7.  we are accessing the website from S3 so it is not secure so fr to get more secure to our website here i deployed an Website infront of S3
-8.  so now our student data website is  Secure.
+To set up a static website hosting environment using AWS services, follow these steps:
+
+1. Create an S3 Bucket: Set up an Amazon S3 bucket to store your website's static files (HTML, CSS, JavaScript). Enable static website hosting on this bucket.
+ 
+2. Upload Website Content: Upload your static website files to the S3 bucket.
+
+3. Configure CloudFront: Create a CloudFront distribution with your S3 bucket as the origin. This will serve your content globally with low latency.
+ 
+4. Set Up API Gateway: Use Amazon API Gateway to create RESTful APIs that your website can call for dynamic operations.
+
+5. Develop Lambda Functions: Write AWS Lambda functions to handle the business logic for your APIs.
+
+6. Configure DynamoDB: Set up Amazon DynamoDB tables to store and retrieve application data as needed by your Lambda functions.
+ 
+7. Integrate API Gateway with Lambda: Connect your API Gateway endpoints to the corresponding Lambda functions to process incoming requests.
+ 
+8. Implement CORS Policies: Configure Cross-Origin Resource Sharing (CORS) in API Gateway to allow your website to make API calls from the browser.
+
+9. Set Up Permissions: Ensure that your Lambda functions have the necessary permissions to access DynamoDB and other AWS services.
+
+10. Test and Deploy: Test your setup thoroughly to ensure all components work together seamlessly, then deploy your website.
+
+This architecture leverages S3 for static content, CloudFront for content delivery, API Gateway and Lambda for dynamic processing, and DynamoDB for data storage.  
+
